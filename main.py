@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 
 pathFile = ""
 try:
-    pathFile = nx.read_graphml('problem.graphml')
+    pathFile = nx.read_graphml("problem.graphml")
 except ET.ParseError as e:
     print("Error parsing GraphML file:", e)
 
@@ -14,7 +14,7 @@ def rateCardA(length=1):
         "verge": 50 * length,
         "road": 100 * length,
         "Chamber": 200,
-        "Pot": 100
+        "Pot": 100,
     }
     return rateCardDict
 
@@ -25,7 +25,7 @@ def rateCardB(length=1, lengthOfTrench=1):
         "verge": 40 * length,
         "road": 80 * length,
         "Chamber": 200,
-        "Pot": 20 * lengthOfTrench
+        "Pot": 20 * lengthOfTrench,
     }
     return rateCardDict
 
@@ -57,7 +57,8 @@ def calculateRateCardA():
 def calculateRateCardB():
     totalRateCardOfB = 0
     for node in pathFile.nodes(data=True):
-        root = [x for x, y in pathFile.nodes(data=True) if y['type'] == "Cabinet"]
+        root = [x for x, y in pathFile.nodes(data=True)
+                if y['type'] == "Cabinet"]
         trenchLength = calculateTrenchLength(pathFile, root[0], node[0])
         value = rateCardB(1, trenchLength)[node[1]["type"]]
         totalRateCardOfB += value
