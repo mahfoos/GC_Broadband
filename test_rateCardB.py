@@ -25,4 +25,3 @@ class TestRateCardB(unittest.TestCase):
             "Pot": 60,
         }
         self.assertEqual(result, expected)
-

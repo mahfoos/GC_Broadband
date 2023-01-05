@@ -29,5 +29,3 @@ class TestCalculateTrenchLength(unittest.TestCase):
         # Test the case where there is no path between the source and target nodes
         length = calculateTrenchLength(self.tree, 1, 2)
         self.assertIsNone(length)
-
-

@@ -58,7 +58,7 @@ def calculateRateCardB():
     totalRateCardOfB = 0
     for node in pathFile.nodes(data=True):
         root = [x for x, y in pathFile.nodes(data=True)
-                if y['type'] == "Cabinet"]
+                if y["type"] == "Cabinet"]
         trenchLength = calculateTrenchLength(pathFile, root[0], node[0])
         value = rateCardB(1, trenchLength)[node[1]["type"]]
         totalRateCardOfB += value

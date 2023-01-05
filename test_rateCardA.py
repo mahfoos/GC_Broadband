@@ -19,4 +19,3 @@ class TestRateCardA(unittest.TestCase):
         self.assertEqual(rate_card["road"], 200)
         self.assertEqual(rate_card["Chamber"], 200)
         self.assertEqual(rate_card["Pot"], 100)
-
